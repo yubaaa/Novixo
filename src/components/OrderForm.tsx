@@ -31,7 +31,7 @@ export function OrderForm({ product, price, productName }: Props) {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
-    if (!form.prenom || !form.nom || !form.telephone || !form.wilaya || !form.adresse) {
+    if (!form.prenom || !form.nom || !form.telephone || !form.wilaya) {
       setError(t("required"));
       return;
     }
@@ -117,8 +117,8 @@ export function OrderForm({ product, price, productName }: Props) {
         </div>
 
         <div>
-          <label className="luxury-label">{t("address")} *</label>
-          <input className="luxury-input" value={form.adresse} onChange={handle("adresse")} required maxLength={300} />
+          <label className="luxury-label">{t("address")}</label>
+          <input className="luxury-input" value={form.adresse} onChange={handle("adresse")} maxLength={300} />
         </div>
 
         <div>

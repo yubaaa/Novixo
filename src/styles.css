@@ -78,24 +78,35 @@
     border-color: var(--color-border);
     box-sizing: border-box;
   }
+
   html {
     background: var(--navy-deep);
   }
+
   body {
     background: var(--navy-deep);
     color: var(--color-foreground);
     font-family: var(--font-body);
     min-height: 100vh;
   }
+
   html[dir="rtl"] body {
     font-family: var(--font-arabic);
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
-  ::selection { background: var(--gold); color: var(--navy-deep); }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
 }
 
 @layer utilities {
@@ -105,18 +116,29 @@
       radial-gradient(ellipse at 20% 70%, color-mix(in oklab, var(--navy) 80%, transparent) 0%, transparent 50%),
       var(--navy-deep);
   }
-  .text-gold { color: var(--gold); }
-  .border-gold { border-color: var(--gold); }
-  .bg-gold { background: var(--gold); }
+
+  .text-gold {
+    color: var(--gold);
+  }
+
+  .border-gold {
+    border-color: var(--gold);
+  }
+
+  .bg-gold {
+    background: var(--gold);
+  }
+
   .glass {
-    background: color-mix(in oklab, var(--card) 60%, transparent);
+    background: oklch(0.22 0.07 260);
     backdrop-filter: blur(14px);
     border: 1px solid var(--border);
   }
+
   .luxury-input {
     width: 100%;
     padding: 12px 14px;
-    background: color-mix(in oklab, white 4%, transparent);
+    background: oklch(0.22 0.07 260);
     border: 1px solid color-mix(in oklab, var(--gold) 20%, transparent);
     border-radius: 8px;
     color: var(--foreground);
@@ -125,11 +147,16 @@
     outline: none;
     transition: border-color .2s, box-shadow .2s;
   }
+
   .luxury-input:focus {
     border-color: var(--gold);
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--gold) 18%, transparent);
   }
-  .luxury-input::placeholder { color: color-mix(in oklab, white 30%, transparent); }
+
+  .luxury-input::placeholder {
+    color: color-mix(in oklab, white 30%, transparent);
+  }
+
   .luxury-label {
     display: block;
     font-size: 0.7rem;
@@ -141,5 +168,18 @@
   }
 }
 
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
-.animate-float { animation: float 5s ease-in-out infinite; }
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-14px)
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}

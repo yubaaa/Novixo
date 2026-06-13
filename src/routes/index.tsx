@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useI18n } from "@/lib/i18n";
 import { PRODUCTS } from "@/lib/constants";
-import chargerImg from "@/assets/charger-main.jpeg";
+import chargerImg from "@/assets/adaptateur.svg";
 import patchesImg from "@/assets/patches-main.jpg";
 
 export const Route = createFileRoute("/")({
